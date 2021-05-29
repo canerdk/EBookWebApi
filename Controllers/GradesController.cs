@@ -28,6 +28,7 @@ namespace EBookWebApi.Controllers
             return await _context.Grades.ToListAsync();
         }
 
+
         // GET: api/Grades/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Grade>> GetGrade(Guid id)
