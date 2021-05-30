@@ -42,7 +42,18 @@ namespace EBookWebApi.Controllers
             return branch;
         }
 
-        [HttpGet("getbybranchid")]
+        [HttpGet("getBranchWithGrades")]
+        public async Task<ActionResult<List<Branch>>> GetGradesWithBranch()
+        {
+            List<Branch> branches = await _context.Branches.ToListAsync();
+            foreach (var branch in branches)
+            {
+                branch.Grades = _context.Grades.Where(x => x.BranchId == branch.Id).OrderByDescending(x => x.Name).ToList();
+            }
+            return branches;
+        }
+
+        [HttpGet("getGradesWithBranchId")]
         public IQueryable<Grade> GetGradesWithBranch(Guid branchId)
         {
             var result = _context.Branches.Where(c => c.Id == branchId).SelectMany(m => m.Grades);
