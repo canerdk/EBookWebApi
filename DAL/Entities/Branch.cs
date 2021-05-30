@@ -8,10 +8,6 @@ namespace EBookWebApi.DAL.Entities
 {
     public class Branch
     {
-        public Branch()
-        {
-            Grades = new Collection<Grade>();
-        }
         public Guid Id { get; set; }
         public string Name { get; set; }
 

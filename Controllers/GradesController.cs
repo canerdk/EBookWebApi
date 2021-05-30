@@ -28,6 +28,13 @@ namespace EBookWebApi.Controllers
             return await _context.Grades.ToListAsync();
         }
 
+        [HttpGet("getDocumentsWithGradeId")]
+        public IQueryable<Document> GetDocumentsWithGrade(Guid gradeId)
+        {
+            var result = _context.Grades.Where(c => c.Id == gradeId).SelectMany(m => m.Documents);
+            return result;
+        }
+
 
         // GET: api/Grades/5
         [HttpGet("{id}")]
