@@ -12,56 +12,48 @@ namespace EBookWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GradesController : ControllerBase
+    public class BooksController : ControllerBase
     {
         private readonly EBookDbContext _context;
 
-        public GradesController(EBookDbContext context)
+        public BooksController(EBookDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Grades
+        // GET: api/Books
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Grade>>> GetGrades()
+        public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
         {
-            return await _context.Grades.ToListAsync();
+            return await _context.Books.ToListAsync();
         }
 
-        [HttpGet("getDocumentsWithGradeId")]
-        public IQueryable<Book> GetDocumentsWithGrade(Guid gradeId)
-        {
-            var result = _context.Grades.Where(c => c.Id == gradeId).SelectMany(m => m.Books);
-            return result;
-        }
-
-
-        // GET: api/Grades/5
+        // GET: api/Books/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Grade>> GetGrade(Guid id)
+        public async Task<ActionResult<Book>> GetBook(Guid id)
         {
-            var grade = await _context.Grades.FindAsync(id);
+            var book = await _context.Books.FindAsync(id);
 
-            if (grade == null)
+            if (book == null)
             {
                 return NotFound();
             }
 
-            return grade;
+            return book;
         }
 
-        // PUT: api/Grades/5
+        // PUT: api/Books/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutGrade(Guid id, Grade grade)
+        public async Task<IActionResult> PutBook(Guid id, Book book)
         {
-            if (id != grade.Id)
+            if (id != book.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(grade).State = EntityState.Modified;
+            _context.Entry(book).State = EntityState.Modified;
 
             try
             {
@@ -69,7 +61,7 @@ namespace EBookWebApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!GradeExists(id))
+                if (!BookExists(id))
                 {
                     return NotFound();
                 }
@@ -82,37 +74,37 @@ namespace EBookWebApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Grades
+        // POST: api/Books
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Grade>> PostGrade(Grade grade)
+        public async Task<ActionResult<Book>> PostBook(Book book)
         {
-            _context.Grades.Add(grade);
+            _context.Books.Add(book);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetGrade", new { id = grade.Id }, grade);
+            return CreatedAtAction("GetBook", new { id = book.Id }, book);
         }
 
-        // DELETE: api/Grades/5
+        // DELETE: api/Books/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Grade>> DeleteGrade(Guid id)
+        public async Task<ActionResult<Book>> DeleteBook(Guid id)
         {
-            var grade = await _context.Grades.FindAsync(id);
-            if (grade == null)
+            var book = await _context.Books.FindAsync(id);
+            if (book == null)
             {
                 return NotFound();
             }
 
-            _context.Grades.Remove(grade);
+            _context.Books.Remove(book);
             await _context.SaveChangesAsync();
 
-            return grade;
+            return book;
         }
 
-        private bool GradeExists(Guid id)
+        private bool BookExists(Guid id)
         {
-            return _context.Grades.Any(e => e.Id == id);
+            return _context.Books.Any(e => e.Id == id);
         }
     }
 }

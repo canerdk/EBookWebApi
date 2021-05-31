@@ -14,15 +14,10 @@ namespace EBookWebApi.DAL.Context
             optionsBuilder.UseSqlServer("Server = .; Database = ArtizekaEBook; Trusted_Connection=True;");
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Grade>()
-                .HasOne(g => g.Branch)
-                .WithMany(b => b.Grades);
-        }
 
         public DbSet<Branch> Branches { get; set; }
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Document> Documents { get; set; }
+        public DbSet<Book> Books { get; set; }
     }
 }
