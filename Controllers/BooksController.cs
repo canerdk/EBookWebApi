@@ -28,6 +28,17 @@ namespace EBookWebApi.Controllers
             return await _context.Books.ToListAsync();
         }
 
+        [HttpGet("getDocumentWithBookId")]
+        public async Task<ActionResult<List<Document>>> GetDocumentsWithBook(Guid bookId)
+        {
+            var result = await _context.Books.Where(c => c.Id == bookId).SelectMany(m => m.Documents).ToListAsync();
+            if (result == null)
+            {
+                return NotFound();
+            }
+            return result;
+        }
+
         // GET: api/Books/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Book>> GetBook(Guid id)

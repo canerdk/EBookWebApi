@@ -2,7 +2,6 @@ C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\bin\D
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\bin\Debug\netcoreapp3.1\EBookWebApi.exe
-C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Debug\netcoreapp3.1\EBookWebApi.csprojAssemblyReference.cache
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Debug\netcoreapp3.1\EBookWebApi.AssemblyInfoInputs.cache
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Debug\netcoreapp3.1\EBookWebApi.AssemblyInfo.cs
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Debug\netcoreapp3.1\EBookWebApi.RazorTargetAssemblyInfo.cache

@@ -53,12 +53,6 @@ namespace EBookWebApi.Controllers
             return branches;
         }
 
-        [HttpGet("getGradesWithBranchId")]
-        public IQueryable<Grade> GetGradesWithBranch(Guid branchId)
-        {
-            var result = _context.Branches.Where(c => c.Id == branchId).SelectMany(m => m.Grades);
-            return result;
-        }
 
         // PUT: api/Branches/5
         [HttpPut("{id}")]
