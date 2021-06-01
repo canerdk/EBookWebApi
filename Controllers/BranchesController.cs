@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EBookWebApi.DAL.Context;
 using EBookWebApi.DAL.Entities;
+using Microsoft.AspNetCore.Cors;
 
 namespace EBookWebApi.Controllers
 {

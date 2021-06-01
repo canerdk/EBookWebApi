@@ -6,7 +6,6 @@ using EBookWebApi.DAL.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,18 +27,20 @@ namespace EBookWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
             services.AddSingleton<EBookDbContext>();
             services.AddTransient<EBookDbContext>();
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolicy", builder =>
+                options.AddPolicy("ApiCorsPolicy", builder =>
                 {
-                    builder.WithOrigins("http://localhost:4200", "http://localhost:4201", "https://localhost:4200", "https://localhost:4201", "https://localhost:44300").AllowAnyHeader()
-                    .AllowAnyMethod().AllowCredentials();
+                    builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
                 });
             });
+
             services.AddControllers().AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -53,6 +54,8 @@ namespace EBookWebApi
 
             app.UseRouting();
 
+            app.UseCors("ApiCorsPolicy");
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -60,7 +63,7 @@ namespace EBookWebApi
                 endpoints.MapControllers();
             });
 
-            app.UseCors("CorsPolicy");
+
         }
     }
 }
