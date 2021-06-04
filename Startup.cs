@@ -34,7 +34,7 @@ namespace EBookWebApi
             {
                 options.AddPolicy("ApiCorsPolicy", builder =>
                 {
-                    builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+                    builder.WithOrigins("http://localhost:4200", "https://service.artizekaekutuphane.com", "https://www.artizekaekutuphane.com", "https://artizekaekutuphane.com", "http://service.artizekaekutuphane.com").AllowAnyMethod().AllowAnyHeader();
                 });
             });
 

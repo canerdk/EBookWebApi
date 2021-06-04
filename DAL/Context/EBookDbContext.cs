@@ -11,8 +11,10 @@ namespace EBookWebApi.DAL.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server = .; Database = ArtizekaEBook; Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=mssql10.trwww.com; Database=artizeka_ekutuphane; User Id=artizeka; Password=t956Gtj*");
         }
+
+        
 
 
         public DbSet<Branch> Branches { get; set; }
