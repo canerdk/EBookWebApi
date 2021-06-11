@@ -125,7 +125,6 @@ C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\bin\R
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\bin\Release\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Release\netcoreapp3.1\EBookWebApi.csprojAssemblyReference.cache
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Release\netcoreapp3.1\EBookWebApi.AssemblyInfoInputs.cache
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Release\netcoreapp3.1\EBookWebApi.AssemblyInfo.cs
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Release\netcoreapp3.1\EBookWebApi.MvcApplicationPartsAssemblyInfo.cache
@@ -136,3 +135,4 @@ C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\R
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Release\netcoreapp3.1\EBookWebApi.dll
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Release\netcoreapp3.1\EBookWebApi.pdb
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Release\netcoreapp3.1\EBookWebApi.genruntimeconfig.cache
+C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Release\netcoreapp3.1\EBookWebApi.csprojAssemblyReference.cache

@@ -26,15 +26,19 @@ namespace EBookWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+
             services.AddControllers();
 
             services.AddSingleton<EBookDbContext>();
             services.AddTransient<EBookDbContext>();
+
+            services.AddControllers().AddXmlSerializerFormatters();
             services.AddCors(options =>
             {
                 options.AddPolicy("ApiCorsPolicy", builder =>
                 {
-                    builder.WithOrigins("http://localhost:4200", "https://service.artizekaekutuphane.com", "https://www.artizekaekutuphane.com", "https://artizekaekutuphane.com", "http://service.artizekaekutuphane.com").AllowAnyMethod().AllowAnyHeader();
+                    builder.WithOrigins("http://localhost:4200", "https://localhost:4200", "https://service.artizekaekutuphane.com", "https://www.artizekaekutuphane.com", "https://artizekaekutuphane.com", "http://service.artizekaekutuphane.com").AllowAnyMethod().AllowAnyHeader();
                 });
             });
 
@@ -51,11 +55,9 @@ namespace EBookWebApi
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseCors("ApiCorsPolicy");
-
+            app.UseStaticFiles();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

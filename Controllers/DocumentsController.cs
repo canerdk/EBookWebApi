@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EBookWebApi.DAL.Context;
 using EBookWebApi.DAL.Entities;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace EBookWebApi.Controllers
 {
@@ -40,6 +42,29 @@ namespace EBookWebApi.Controllers
             }
 
             return document;
+        }
+
+        [HttpGet("getimages")]
+        public IActionResult GetPdf(string docName)
+        {
+            List<string> imageName = new List<string>();
+            var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\pdfimages\\" + docName + "\\");
+            try
+            {
+                string[] fileEntries = Directory.GetFiles(imagePath);
+                foreach (var item in fileEntries)
+                {
+                    var ext = Path.GetExtension(item);
+                    var name = Path.GetFileNameWithoutExtension(item);
+                    string newName = "https://service.artizekaekutuphane.com/wwwroot/pdfimages/" + docName + "/" + name + ext;
+                    imageName.Add(newName);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return new JsonResult(imageName);
         }
 
         // PUT: api/Documents/5
