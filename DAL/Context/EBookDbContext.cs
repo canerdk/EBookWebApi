@@ -11,7 +11,7 @@ namespace EBookWebApi.DAL.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=; Database=artizeka_ekutuphane;");
+            optionsBuilder.UseSqlServer("Server=mssql10.trwww.com; Database=artizeka_ekutuphane");
         }
 
         
