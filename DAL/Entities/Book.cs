@@ -10,6 +10,7 @@ namespace EBookWebApi.DAL.Entities
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string ImageUrl { get; set; }
+        public int? HitRate { get; set; }
         public DateTime AddDate { get; set; }
         public DateTime UpdateDate { get; set; }
         public Guid GradeId { get; set; }

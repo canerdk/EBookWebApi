@@ -135,3 +135,4 @@ C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\bin\D
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Debug\netcoreapp3.1\EBookWebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Caner\Desktop\Desktop\Freelance\Artızeka Yayınları\EBookWebApi\obj\Debug\netcoreapp3.1\EBookWebApi.csprojAssemblyReference.cache

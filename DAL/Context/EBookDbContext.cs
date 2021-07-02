@@ -11,15 +11,15 @@ namespace EBookWebApi.DAL.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=mssql10.trwww.com; Database=artizeka_ekutuphane");
+            optionsBuilder.UseSqlServer("");
         }
 
         
-
 
         public DbSet<Branch> Branches { get; set; }
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Document> Documents { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }
